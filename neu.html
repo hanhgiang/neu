@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trường Đại Học Kinh Tế Quốc Dân</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --maincolor: #0065ca;
+}
+html{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    background: #e2e2e2;
+}
+body{
+    background-color: white;
+    width: 1182px;
+    margin: 0 auto ;
+    padding: 0 8px;
+}
+#navbar{
+    height: 35px ;
+    background-color:#004F9E ;
+}
+#navbar .navbarmenu{
+    height: 100%;
+    margin-left:35px;
+    float: left;
+}
+#navbar .navbarmenu>ul{
+    list-style-type: none;
+    height: 100%;
+}
+#navbar .navbarmenu>ul>li{
+    line-height: 35px;
+    float: left;
+    margin-left: 30px;
+    text-transform: uppercase;
+    height: 100%;
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+#navbar .navbarmenu>ul>li>a{
+    color: white;
+    text-decoration: none;
+}
+#navbar .navbarsearch{
+    float: left;
+    border-radius: 13px;
+    width: 192px;
+    height:26px ;
+    margin-top: 5px;
+    background-color: #015EBE;
+    margin-left: 30px;
+}
+#navbar .navbarsearch>input{
+    background: none;
+    margin-top: 5px ;
+    margin-left: 7px ;
+    font-weight: bold;
+    color: white;
+    display: block;
+    float: left;
+    width: 85%;
+    border: none;
+}
+#navbar .navbarsearch>input:focus{
+    outline: none;
+}
+#navbar .navbarsearch>span{
+    color: white;
+    font-size: 1.1rem;
+    display: block;
+    float: left;
+    margin-top: 4px;
+}
+#navbar .navbarimg{
+    float: left;
+    margin-left: 50px;
+    margin-top: 6px ;
+}
+#banner{
+    height: 192px;
+    width: 100%;
+}
+#banner .largebanner{
+    float: left;
+    width: 900px ;
+    height: 100%;
+}
+#banner .smallbanner{
+    float: left;
+    height: 100%;
+    width: 266px;
+}
+#banner .smallbanner>img{
+    width: 100%;
+    height: 100%;
+}
+#mainmenu{
+    width: 100%;
+    height: 52px ;
+    background: var(--maincolor);
+}
+#mainmenu .mainlist{
+    list-style-type: none;
+    height: 100%;
+}
+#mainmenu .mainlist>li{
+    height: 100%;
+    line-height:52px ;
+    float: left;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 0 10px;
+    position: relative;
+}
+#mainmenu .mainlist>li>a{
+    color: white;
+    text-decoration: none;
+}
+#mainmenu .mainlist>li:hover{
+    color: yellow;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#mainmenu .mainlist>li:hover>a{
+    color: yellow;
+}
+#mainmenu .mainlist>li>ul{
+    list-style-type: none;
+    width:250px;
+    position: absolute;
+    z-index: 1;
+    left:0;
+    display:none;
+    background:var(--maincolor);
+}
+#mainmenu .mainlist>li:hover >ul{
+    display:block;
+    padding:8px 0;
+}
+#mainmenu .mainlist>li>ul>li{
+    font-size:0.9rem;
+    text-transform: none;
+    font-weight: normal;
+    height: 35px;
+    line-height: 35px;
+    background:var(--maincolor);
+    color:white;
+    text-align: left;
+    padding:0 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+}
+#mainmenu .mainlist>li>ul>li::before{
+    content:">> ";
+}
+#mainmenu .mainlist>li>ul>li:hover{
+    color:yellow;
+    background:#0255a7;
+    animation: slide 1s;
+}
+#mainmenu .mainlist>li>ul>li:hover>a{
+    color:yellow;
+}
+#mainmenu .mainlist>li>ul>li>a{
+    color:white;
+    text-decoration: none;
+}
+@keyframes slide{
+    0%{left:8px;}
+    20%{left:-6.5px;}
+    40%{left:5px;}
+    60%{left:-3.5px;}
+    80%{left:2px;}
+    100%{left:0;}
+}
+#newsfeed{
+    height: 35px;
+    margin: 10px 0;
+}
+#newsfeed .dts{
+    height: 100%;
+    width:140px;
+    color: yellow;
+    background:var(--maincolor);
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 35px;
+    font-size:0.85rem;
+    text-align:right;
+    float:left;
+}
+#newsfeed .dts a{
+    color:yellow;
+    text-decoration: none;
+}
+#newsfeed .arr{
+    width:10px;
+    height:10px;
+    border-top: 17.5px solid transparent;
+    border-bottom:  17.5px solid transparent;
+    border-left: 17.5px solid var(--maincolor);
+    background: #FBF29E;
+    float:left;
+}
+#newsfeed .running-text{
+    width:1008px;
+    height:100%;
+    background: #FBF29E;
+    float:left;
+    overflow: hidden;
+}
+#newsfeed .running-text>ul{
+    height: 100%;
+    list-style-type: none;
+    position: relative;
+    animation: runnings 150s infinite;
+    animation-timing-function: linear;
+    white-space: nowrap;
+    line-height: 35px;
+}
+#newsfeed .running-text>ul:hover{
+    animation-play-state: paused;
+}
+@keyframes runnings {
+    0%{left:100%;}
+    100%{left:-10000px;}
+}
+#newsfeed .running-text>ul>li{
+    display: inline-block;
+    margin-left:20px;
+    font-weight: bold;
+}
+#newsfeed .running-text>ul>li::before{
+    content:">> ";
+    color:var(--maincolor);
+}
+#newsfeed .running-text>ul>li>a{
+    color:red;
+}
+#maincontent{
+    width: 100%;
+    height: 430px;
+}
+#maincontent .leftcontent{
+    height: 100%;
+    width: 670px;
+    margin-right: 16px;
+    float: left;
+    position: relative;
+}
+#maincontent .leftcontent>img{
+    height: 100%;
+    width: 100%;
+}
+#maincontent .leftcontent>div{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    padding: 15px;
+    background-color: rgba(0, 101, 202, 0.7);
+    font-size: 1.2rem;
+    text-align: justify;
+}
+#maincontent .leftcontent>div>a{
+    text-decoration: none;
+    color: white;
+}
+#maincontent .leftcontent:hover>div>a{
+    color: yellow;
+}
+#maincontent .rightcontent{
+    height: 100%;
+    width: 480px;
+    float: left;
+}
+#maincontent .rightcontent .top{
+    height: 180px ;
+    width: 100%;
+    margin-bottom:12px;
+}
+#maincontent .rightcontent .top>a{
+    display: block;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: 33.33%;
+    height: 50%;
+    float: left;
+    text-align: center;
+}
+#maincontent .rightcontent .top>a>img{
+    height: 44px;
+}
+#maincontent .rightcontent .top>a>div{
+    margin-top: 10px;
+    color: var(--maincolor);
+}
+#maincontent .rightcontent .top>a:hover>img{
+    animation: imgopacity 2s ;
+}
+@keyframes imgopacity{
+    0%{opacity: 50%;}
+    100%{opacity: 100%;}
+}
+#maincontent .rightcontent .bottom{
+    height: 240;
+    width: 100%;
+    position: relative;
+}
+#maincontent .rightcontent .bottom>ul{
+    height: 46px;
+    list-style-type: none;
+    width: 100%;
+}
+#maincontent .rightcontent .bottom>ul>li{
+    height: 100%;
+    line-height: 46px;
+    padding: 0 15px;
+    float: left;
+    margin-right: 3px;
+    border-radius: 5px 5px 0 0;
+}
+#maincontent .rightcontent .bottom>ul>li>a{
+    color: rgb(75, 71, 71);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+#maincontent .rightcontent .bottom>ul>li.active{
+    background-color: var(--maincolor);
+}
+#maincontent .rightcontent .bottom>ul>li.active:hover{
+    background-color: var(--maincolor);
+}
+#maincontent .rightcontent .bottom>ul>li.active:hover>a{
+    color:white ;
+}
+#maincontent .rightcontent .bottom>ul>li.active>a{
+    color: white;
+
+}
+#maincontent .rightcontent .bottom>ul>li:hover{
+    background-color:#dfdfdf;
+    border: 1px solid var(--maincolor);
+    border-bottom: none;
+    padding: 0 14px;
+    line-height: 44px;
+}
+#maincontent .rightcontent .bottom .tab{
+    color: var(--maincolor);
+    position: absolute;
+    top: 46px;
+    background-color: var(--maincolor);
+    visibility: visible;
+    width: 100%;
+    height: 1px;
+}
+#maincontent .rightcontent .bottom .articles{
+    position: absolute;
+    top:52px;
+    float: left;
+    height: 185px;
+    width: 100%;
+    overflow-y: auto;
+}
+#maincontent .rightcontent .bottom .articles::-webkit-scrollbar{
+    width: 7px;
+    height: 90px;
+}
+#maincontent .rightcontent .bottom .articles::-webkit-scrollbar-track{
+    background: white;
+}
+#maincontent .rightcontent .bottom .articles::-webkit-scrollbar-thumb{
+    background: var(--maincolor);
+    display: none;
+    border-radius: 15px;
+}
+
+#maincontent .rightcontent .bottom .articles:hover::-webkit-scrollbar-thumb{
+    display: block;
+}
+#maincontent .rightcontent .bottom .articles>a{
+    display: block;
+    width: 100%;
+    height: 55px;
+    margin-top: 20px;
+    color: rgb(70, 67, 67);
+    float: left;
+    font-size: 1rem;
+}
+#maincontent .rightcontent .bottom .articles>a>img{
+    width: 85px;
+    height: 100%;
+    float: left;
+    margin-right: 15px;
+}
+#maincontent .rightcontent .bottom .articles>a:hover{
+    color: var(--maincolor);
+}
+@keyframes imageopacity{
+    0%{opacity: 50%;}
+    100%{opacity: 100%;}
+}
+#maincontent .rightcontent .bottom .articles>a:hover>img{
+    animation: imageopacity 1.5s;
+}
+#maincontent .rightcontent .bottom .articles>p{
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--maincolor);
+    margin-top: 22px;
+    text-align: right;
+}
+#maincontent .rightcontent .bottom .articles>p>a{
+    color: var(--maincolor);
+}
+#ad .top{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #454545;
+    margin-top: 15px;
+}
+#ad .bottom{
+    height: 60px;
+    width: 1182px;
+}
+#ad .bottom>a{
+    margin-right: 30px;
+    line-height: 60px;
+}
+#ad .bottom>a>img{
+    width: 203px;
+    vertical-align: middle;
+}
+#ad .bottom>a>img:last-child{
+    margin-right: 0px;
+}
+#ad .bottom>a:hover>img{
+    animation: imgopacity 1.5s;
+}
+#footer{
+    height: 198px;
+    background: var(--maincolor);
+    margin-top: 25px;
+}
+#footer .leftfooter{
+    float: left;
+    margin-top: 45px;
+    color: white;
+    margin-left: 15px;
+}
+#footer .leftfooter .line2{
+}
+#footer .leftfooter .line2>span{
+    color: white;
+    font-size: 1rem;
+}
+#footer .leftfooter .line2>p{
+    margin-left: 5px;
+    display: inline-block;
+}
+#footer .leftfooter .line3{
+}
+#footer .leftfooter .line3>p{
+    margin-left: 5px;
+    display: inline-block;
+}
+#footer .leftfooter .line3>p>span{
+    font-size: 1rem;
+}
+#footer .leftfooter .line3>a{
+    text-decoration: none;
+    color: white;
+}
+#footer .rightfooter{
+    margin-left: 200px;
+    margin-top: 20px;
+    float: left;
+}
+#footer .rightfooter .line1{
+    display: inline-block;
+}
+#footer .rightfooter .line1>a{
+    color: white;
+    font-size: 2rem;
+    margin-left: 22px;
+	text-decoration:none;
+}
+#footer .rightfooter .line1>a>img{
+    width: 81px;
+    height: 81px;
+}
+#footer .rightfooter .line2{
+    margin-top: 15px;
+}
+#footer .rightfooter .line2>a{
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+}
+#footer .rightfooter .line2>a>p{
+    float: left;
+}
+#footer .rightfooter .line2>a>img{
+    float: left;
+}
+#footer .rightfooter .line3>p{
+    color: white;
+}
+#footer .rightfooter .line3>p>a{
+    color: white;
+    text-decoration: none;
+}
+
+
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <div class="navbarmenu">
+        <ul>
+            <li><a href="https://neu.edu.vn/vi/ho-tro-covid-19/">Hỗ trợ - covid 19</a></li>
+            <li><a href="https://neu.edu.vn/vi/hoi-dong-giao-su">HĐ giáo sư</a></li>
+            <li><a href="https://onegate.neu.edu.vn/#/app/procedure/?page=1&pageSize=10">Dịch vụ công</a></li>
+            <li><a href="http://dec.neu.edu.vn/">e-learning</a></li>
+            <li><a href="https://thongtinnoibo.neu.edu.vn/">thông tin nội bộ</a></li>
+            <li><a href="https://neu.edu.vn/module/sitemap?q=cau-truc-site-map">sitemap</a></li>
+            <li><a href="https://sso.neu.edu.vn/adfs/ls/?client-request-id=8636b507-53b0-4053-acc0-d6d8e7ea8177&username=&wa=wsignin1.0&wtrealm=urn%3afederation%3aMicrosoftOnline&wctx=estsredirect%3d2%26estsrequest%3drQIIAdNiNtQztFIxgAAjXRCpa5CWZqibnApiIYEiIS4B9q1mbRuCgx3WHLh24_mrxvJZjFx5qaV6qSmlemV5qxjlM0pKCoqt9PXzS0ty8vOz9fLT0jKTU_WS83P188sT9XcwMl5gZFzFZG5mbGZsbGBsYGppbGJsYmZobKZnaGacZp6UmqJrZmxhomtiaZ6km2RgmqibZpZsYZliaJKUaJZ8i4nf37G0JMMIROQXZValfmLiTMsvyo0vyC8umcUsBrbFvig1MSfXFslhzER5cBMzG9Chufl5p5jZ8gtS8zJTLrAwvmLhMWC04uBgFWCQYFBg-MHCuIgVGBD-oh-_Wm2qc9iU9zBlvQEHwylWffeyUMskk4DUKP9UyxCPzKqibIPEzCC3lAr9VN9Qo-yo8oBCF5_kqBwLNxNbSyvDCWyME9jYdnESCjMA0">email</a></li>
+        </ul>
+        </div>
+        <div class="navbarsearch">
+            <input type="text" placeholder="Tìm kiếm...">
+            <span class="glyphicon glyphicon-search"></span>
+        </div>
+        <div class="navbarimg">
+            <img src="https://neu.edu.vn/Resources/ImagesPortal/HomePage/imgs/language/English.png" alt="language">
+        </div>
+    </div>
+    <div id="banner">
+        <div class="largebanner">
+            <img src="https://neu.edu.vn/Resources/Images/SubDomain/HomePage/banner/banner_65_NAM_2021.png" alt="largebanner">
+        </div>
+        <div class="smallbanner">
+            <img src="https://neu.edu.vn/Resources/Images/SubDomain/HomePage/banner2020/a7.jpg" alt="smallbanner">
+        </div>
+    </div>
+    <div id="mainmenu">
+        <ul class="mainlist">
+            <li>giới thiệu
+                <ul class="smalllist1">
+                    <li><a href="">Lịch sử hình thành và phát triển trường</a></li>
+                    <li><a href="">Chiến lược phát triền trường Đại học kinh tế quốc dân 2020-2030</a></li>
+                    <li><a href="">Thư hiệu trưởng</a></li>
+                    <li><a href="">Hệ thống nhận diện</a></li>
+                    <li><a href="">Bản đồ đường đi</a></li>
+                    <li>Cơ cấu tổ chức</li>
+                    <li><a href="">Ba công khai</a></li>
+                    <li><a href="">Mạng lưới cựu sinh viên</a></li>
+                </ul>
+            </li>
+            <li>Đơn vị
+                <ul class="smalllist2">
+                    <li><a href="">Lịch sử hình thành và phát triển trường</a></li>
+                    <li><a href="">Chiến lược phát triền trường Đại học kinh tế quốc dân 2020-2030</a></li>
+                    <li><a href="">Thư hiệu trưởng</a></li>
+                    <li><a href="">Hệ thống nhận diện</a></li>
+                    <li><a href="">Bản đồ đường đi</a></li>
+                    <li>Cơ cấu tổ chức</li>
+                    <li><a href="">Ba công khai</a></li>
+                    <li><a href="">Mạng lưới cựu sinh viên</a></li>
+                </ul>
+            </li>
+            <li>Đào tạo
+                <ul class="smalllist3">
+                    <li><a href="">Lịch sử hình thành và phát triển trường</a></li>
+                    <li><a href="">Chiến lược phát triền trường Đại học kinh tế quốc dân 2020-2030</a></li>
+                    <li><a href="">Thư hiệu trưởng</a></li>
+                    <li><a href="">Hệ thống nhận diện</a></li>
+                    <li><a href="">Bản đồ đường đi</a></li>
+                    <li>Cơ cấu tổ chức</li>
+                    <li><a href="">Ba công khai</a></li>
+                    <li><a href="">Mạng lưới cựu sinh viên</a></li>
+                </ul>
+            </li>
+            <li>Hợp tác quốc tế</li>
+            <li>Nghiên cứu khoa học
+            <li><a href="">Tuyển sinh</a></li>
+            <li>Dịch vụ</li>
+            <li>Đảng - Đoàn thể</li>
+            <li>Thông báo - Tin tức</li>
+        </ul>
+    </div>
+    <div id="newsfeed">
+        <div class="dts"> <a href="">
+            Đang tuyển sinh</a></div>
+        <div class="arr"></div>
+        <div class="running-text">
+            <ul>
+                <li><a href="">Thông báo tuyển sinh chương trình cử nhân Quốc tế Quản trị Kinh doanh giữa Đại học Kinh tế Quốc dân và Đại học Dongseo Hàn Quốc</a></li>
+                <li><a href="">Thông báo Tuyển sinh khoá 8 Chương trình liên kết đào tạo Cử nhân – Thạc sỹ Chuyên ngành Định phí Bảo hiểm và Tài chính (Actuary) Đại học Lyon1, Cộng hoà Pháp – Đại học Kinh tế Quốc dân</a></li>
+                <li><a href="">Tuyển sinh Chương trình Thạc sỹ Điều hành Quản trị Kinh doanh Quốc tế (IEMBA) - Khóa 8</a></li>
+                <li><a href="">Thông báo Xét tuyển kết hợp vào đại học chính quy năm 2021</a></li>
+                <li><a href="">Thông báo tuyển sinh Đợt 1, Chương trình đào tạo Thạc sĩ Việt Nam–Hà Lan Khóa 28, Niên khóa 2021 – 2023</a></li>
+                <li><a href="">Thông báo tuyển sinh đại học hình thức Vừa làm vừa học Đợt 2 - Năm học 2020 - 2021</a></li>
+                <li><a href="">TUYỂN SINH THẠC SỸ E-MBA Chương trình đào tạo thạc sỹ Quản trị Kinh doanh học bằng tiếng Anh E-MBA</a></li>
+                <li><a href="">Thông báo tuyển sinh đại học hệ đào tạo từ xa NEU - Elearning năm 2021 của Trường Đại học Kinh tế Quốc dân</a></li>
+                <li><a href="">HÔNG BÁO TUYỂN SINH CÁC LỚP “ỨNG DỤNG CÔNG NGHỆ THÔNG TIN CƠ BẢN” THÁNG 1/2020</a></li>
+                <li><a href="">THÔNG BÁO TUYỂN SINH CÁC LỚP “ỨNG DỤNG CÔNG NGHỆ THÔNG TIN CƠ BẢN” THÁNG 12/2020</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="maincontent">
+        <div class="leftcontent">
+            <img src="https://neu.edu.vn/Temp/ArticleImage/89e7f603-bc5d-49a6-b84d-a2133490f99a.jpg" alt="">
+            <div><a href="https://neu.edu.vn/vi/tin-tuc-moi-nhat/thu-chuc-mung-nam-hoc-moi-2021-2022-cua-hieu-truong-truong-dai-hoc-kinh-te-quoc-dan">
+                Thư chúc mừng năm học mới 2021-2022 của Hiệu trưởng Trường Đại học Kinh tế Quốc dân</a>
+            </div>
+        </div>
+        <div class="rightcontent">
+            <div class="top">
+                <a href="https://neu.edu.vn/sinh-vien-tuong-lai">
+                    <img src="https://neu.edu.vn/Resources/ImagesPortal/HomePage/imgs/objects/icon-sv-tuong-lai.png" alt="">
+                    <div>SV tương lai </div>
+                </a>
+                <a href="https://neu.edu.vn/can-bo-neu">
+                    <img src="https://neu.edu.vn/Resources/ImagesPortal/HomePage/imgs/objects/icon-Can-bo.png" alt="">
+                    <div>cán bộ</div>
+                </a>
+                <a href="https://neu.edu.vn/sinh-vien-neu">
+                    <img src="https://neu.edu.vn/Resources/ImagesPortal/HomePage/imgs/objects/icon-SV.png" alt="">
+                    <div>sinh viên</div>
+                </a>
+                <a href="http://alumni.neu.edu.vn/">
+                    <img src="https://neu.edu.vn/Resources/ImagesPortal/HomePage/imgs/objects/icon-cuu-sv.png" alt="">
+                    <div>cựu sv</div>
+                </a>
+                <a href="https://neu.edu.vn/vi/doi-tac-hop-tac">
+                    <img src="https://neu.edu.vn/Resources/ImagesPortal/HomePage/imgs/objects/icon-Doi-tac.png" alt="">
+                    <div>đối tác</div>
+                </a>
+                <a href="https://khoahoc.neu.edu.vn/vi/cong-bo-quoc-te">
+                    <img src="https://neu.edu.vn/Resources/ImagesPortal/HomePage/imgs/objects/icon-congboquocte.png" alt="">
+                    <div>Công bố quốc tế</div>
+                </a>
+            </div>
+            <div class="bottom">
+                <ul>
+                    <li class="active"><a href="">Bản tin NEU</a></li>
+                    <li><a href="">Bản tin sự kiện</a></li>
+                    <li><a href="">Sự kiện</a></li>
+                </ul>
+                <div class="tab">
+                    <br>
+                </div>
+                <div class="articles">
+                    <a href="https://neu.edu.vn/vi/ban-tin-neu/chuc-mung-ngay-doanh-nhan-viet-nam-13-10">
+                        <img src="https://neu.edu.vn/Temp/ArticleImage/c229cbb3-1af3-4a06-8a33-35384ee34352.jpg" alt="">
+                        <p>Chúc mừng ngày Doanh nhân Việt Nam 13/10</p>
+                    </a>
+                    <a href="https://neu.edu.vn/vi/ban-tin-neu/tap-huan-va-trien-khai-ke-hoach-ra-soat-cap-nhat-chuong-trinh-dao-tao-thac-si-nam-2021">
+                        <img src="https://neu.edu.vn/Temp/ArticleImage/e0bf6897-1fa8-4794-8304-483bd917590b.JPG" alt="">
+                        <p>Tập huấn và triển khai kế hoạch rà soát, cập nhật chương trình đào tạo Thạc sĩ năm 2021</p>
+                    </a>
+                    <a href="https://neu.edu.vn/vi/ban-tin-neu/thu-chuc-mung-nam-hoc-moi-2021-2022-cua-hieu-truong-truong-dai-hoc-kinh-te-quoc-dan">
+                        <img src="https://neu.edu.vn/Temp/ArticleImage/89e7f603-bc5d-49a6-b84d-a2133490f99a.jpg" alt="">
+                        <p>Thư chúc mừng năm học mới 2021-2022 của Hiệu trưởng Trường Đại học Kinh tế Quốc dân</p>
+                    </a>
+                    <a href="https://neu.edu.vn/vi/ban-tin-neu/toa-dam-cong-tac-kiem-dinh-chat-luong-chuong-trinh-dao-tao-theo-tieu-chuan-fibaa">
+                        <img src="https://neu.edu.vn/Temp/ArticleImage/92b3094f-eb6e-444f-ad09-9ed34adf823f.JPG" alt="">
+                        <p>Tọa đàm công tác kiểm định chất lượng chương trình đào tạo theo tiêu chuẩn FIBAA</p>
+                    </a>
+                    <p>
+                        <a href="https://neu.edu.vn/vi/ban-tin-neu">Xem các tin khác</a>
+                    </p>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <div id="ad">
+        <div class="top">
+            <p>Liên kết</p>
+        </div>
+        <div class="bottom">
+            <a href=""><img src="https://neu.edu.vn/Resources/imagesPortlet/6fadfc79-1a7a-4ab0-997f-6065be407a5a/ephd.png" alt=""></a>
+            <a href=""><img src="https://neu.edu.vn/Resources/imagesPortlet/6fadfc79-1a7a-4ab0-997f-6065be407a5a/Tien_si_Lincoln.jpg" alt=""></a>
+            <a href=""><img src="https://neu.edu.vn/Resources/imagesPortlet/6fadfc79-1a7a-4ab0-997f-6065be407a5a/bogddt.jpg" alt=""></a>
+            <a href=""><img src="https://neu.edu.vn/Resources/imagesPortlet/6fadfc79-1a7a-4ab0-997f-6065be407a5a/bannerTuxa.png" alt=""></a>
+            <a href=""><img src="https://neu.edu.vn/Resources/imagesPortlet/6fadfc79-1a7a-4ab0-997f-6065be407a5a/HoiThaoICFAA.png" alt=""></a>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="leftfooter">
+            <p>Copyright © 2016 - Trường Đại học Kinh tế Quốc dân. All Rights Reserved</p>
+            <div class="line2">
+                <span class="fa fa-home"></span>
+                <p>207 Giải Phóng, Đồng Tâm, Quận Hai Bà Trưng, Hà Nội, Vietnam</p>
+            </div>
+            <div class="line3">
+                <p>
+                <span class="fa fa-phone"></span>
+                <p>(84)24.36.280.280</p>
+                </p>
+                <p>
+                    <span class="fa fa-fax"></span>
+                    <p>(84)24.38.695.992</p>
+                </p>
+                <a href="https://360.neu.edu.vn/">https://360.neu.edu.vn/</a>
+            </div>
+        </div>
+        <div class="rightfooter">
+            <div class="line1">
+                <img src="https://neu.edu.vn/Resources/ImagesPortal/HomePage/imgs/red.png" alt="">
+                <a href="" class="fa fa-facebook"></a>
+                <a href="" class="fa fa-youtube"></a>
+                <a href="" class="fa fa-twitter"></a>
+                <a href=""><img src="https://neu.edu.vn/Resources/Images/SubDomain/HomePage/LOGO/logobgdvadt.png" alt=""></a>
+            </div>
+            <div class="line2">
+                <a href="http://psctelecom.com.vn/">
+                    <p>Designed and Developed by</p>
+                    <img src="https://neu.edu.vn/Resources/ImagesPortal/HomePage/imgs/logo_PSC_W.png" alt="">
+                </a>
+            </div>
+            <div class="line3">
+                <p>Mọi đóng góp xin gửi về: <a href="mailto:ask-cait@neu.edu.vn">ask-cait@neu.edu.vn</a> |<br>
+                    <a href="mailto:dhktqd@neu.edu.vn">dhktqd@neu.edu.vn</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
